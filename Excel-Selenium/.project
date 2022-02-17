@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>resources/TestData.xlsx</name>
+			<type>1</type>
+			<location>C:/Users/rogelio.aguilar/Documents/Excel/TestData.xlsx</location>
+		</link>
+	</linkedResources>
 </projectDescription>

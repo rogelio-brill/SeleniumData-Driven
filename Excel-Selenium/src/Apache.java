@@ -38,9 +38,9 @@ public class Apache {
     public static  void main(String args[]) throws IOException {
     	//set the ChromeDriver path
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\rogelio.aguilar\\chromedriver_win32\\chromedriver.exe");
-
+		System.out.println(System.getProperty("user.dir"));
         //Create an object of File class to open xls file
-        File file = new File("C:\\Users\\rogelio.aguilar\\Documents\\Excel\\TestData.xlsx");
+        File file = new File("../Excel-Selenium/resources/TestData.xlsx");
         
         //Create an object of FileInputStream class to read excel file
         FileInputStream inputStream = new FileInputStream(file);
