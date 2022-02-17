@@ -69,10 +69,7 @@ public class Apache {
         WebElement genderMale= driver.findElement(By.id("gender-radio-1"));
         WebElement mobile=driver.findElement(By.id("userNumber"));
         WebElement address=driver.findElement(By.id("currentAddress"));
-        WebElement submitBtn=driver.findElement(By.id("submit"));
-        WebElement subjects=driver.findElement(By.xpath("//*[@id=\"subjectsInput\"]"));
-
-
+        
 
         //iterate over all the rows in Excel and put data in the form.
         for(int i=1;i<=rowCount;i++) {
@@ -87,14 +84,6 @@ public class Apache {
             //Click on the gender radio button using javascript
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", genderMale);
-            
-            // close 
-           //driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"fixedban\"]/div/div[1]")));
-// 		   WebElement close = driver.findElement(By.id("close-fixedban"));
-// 		   WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
-// 		   wait.until(ExpectedConditions.elementToBeClickable(close));
-// 		   close.click();
- 		   //driver.switchTo().defaultContent();
             
             //Click on submit button
  		    type(By.id("submit"), String.valueOf(Keys.DOWN));
@@ -117,7 +106,7 @@ public class Apache {
             }
             
             // Write the data back in the Excel file
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\rogelio.aguilar\\Documents\\Excel\\seloutput1.xlsx");
+            FileOutputStream outputStream = new FileOutputStream("../Excel-Selenium/resources/seloutput1.xlsx");
             wb.write(outputStream);
             
   		   WebElement close = driver.findElement(By.id("close-fixedban"));
@@ -134,13 +123,6 @@ public class Apache {
   	            //wait for page to come back to registration page after close button is clicked
   	            driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
   		   }
-
-            //close the confirmation popup
-//            WebElement closebtn = driver.findElement(By.id("closeLargeModal"));
-//            closebtn.click();
-            
-            //wait for page to come back to registration page after close button is clicked
-//            driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
         }
         
         //Close the workbook
